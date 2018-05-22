@@ -17,7 +17,7 @@ analyzer:
     always_declare_return_types: error
     always_put_required_named_parameters_first: error
     always_require_non_null_named_parameters: error
-    annotate_overrides: error
+    annotate_overrides: ignore # - Just for demo purposes
     assignment_to_const: error
     assignment_to_final: error
     avoid_empty_else: error
