@@ -30,6 +30,8 @@ void onData(HttpRequest event) {
 
   event.response
     ..statusCode = HttpStatus.OK
+    // only for demo purpose, remove in production
+    ..headers.add('Access-Control-Allow-Origin', '*')
     ..write(encoded)
     ..close();
 }

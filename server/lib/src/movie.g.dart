@@ -8,13 +8,13 @@ part of 'movie.dart';
 
 Movie _$MovieFromJson(Map<String, dynamic> json) => new Movie(
     json['title'] as String,
-    json['episodeNumber'] == null
+    json['episode_number'] == null
         ? null
-        : intFromString(json['episodeNumber'] as String),
-    (json['mainCharacters'] as List)?.map((dynamic e) => e as String)?.toList(),
+        : intFromString(json['episode_number'] as String),
+    (json['main_characters'] as List)?.map((dynamic e) => e as String)?.toList(),
     json['description'] as String,
     json['poster'] as String,
-    json['heroImage'] as String);
+    json['hero_image'] as String);
 
 abstract class _$MovieSerializerMixin {
   String get title;
@@ -25,10 +25,10 @@ abstract class _$MovieSerializerMixin {
   String get heroImage;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'title': title,
-        'episodeNumber': episodeNumber,
-        'mainCharacters': mainCharacters,
+        'episode_number': episodeNumber,
+        'main_characters': mainCharacters,
         'description': description,
         'poster': poster,
-        'heroImage': heroImage
+        'hero_image': heroImage
       };
 }

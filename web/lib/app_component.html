@@ -1,0 +1,18 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="content-padding">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="'/'" routerLinkActive="active">Home</a></li>
+    </ul>
+  </div>
+</nav>
+<header></header>
+<main>
+  <router-outlet [routes]="routes"></router-outlet>
+</main>
+<footer>
+  <div class="content-padding">
+    <div class="footer-content">
+      <p>Copyright &copy; Star Wars Movie Application</p>
+    </div>
+  </div>
+</footer>

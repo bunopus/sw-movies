@@ -5,12 +5,16 @@ part 'movie.g.dart';
 class Movie extends Object with _$MovieSerializerMixin {
   String title;
 
-  @JsonKey(fromJson: intFromString)
+  @JsonKey(fromJson: intFromString, name:'episode_number')
   int episodeNumber;
 
+  @JsonKey(name:'main_characters')
   List<String> mainCharacters;
+
   String description;
   String poster;
+
+  @JsonKey(name:'hero_image')
   String heroImage;
 
   Movie(this.title, this.episodeNumber, this.mainCharacters,
