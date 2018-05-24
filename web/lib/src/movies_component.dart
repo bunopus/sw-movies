@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:models/models.dart';
 
 import '../movies_service.dart';
 
@@ -14,16 +15,16 @@ import '../movies_service.dart';
 class MoviesComponent implements OnActivate {
   final MoviesService _moviesService;
 
-  List<Map> items;
+  Movies movies;
 
   MoviesComponent(this._moviesService);
 
-  String getMovieLink(item) {
-    return '/movie/${item['episode_number']}';
+  String getMovieLink(Movie item) {
+    return '/movie/${item.episodeNumber}';
   }
 
   @override
   Future onActivate(_, RouterState current) async {
-    items = await _moviesService.getMovies();
+    movies = await _moviesService.getMovies();
   }
 }

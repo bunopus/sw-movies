@@ -5,7 +5,7 @@ part 'movie.g.dart';
 class Movie extends Object with _$MovieSerializerMixin {
   String title;
 
-  @JsonKey(fromJson: intFromString, name:'episode_number')
+  @JsonKey(fromJson: intFromAny, name:'episode_number')
   int episodeNumber;
 
   @JsonKey(name:'main_characters')
@@ -23,6 +23,6 @@ class Movie extends Object with _$MovieSerializerMixin {
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 }
 
-int intFromString(String val) {
-  return int.parse(val, radix: 10);
+int intFromAny(dynamic val) {
+  return int.parse(val.toString(), radix: 10);
 }

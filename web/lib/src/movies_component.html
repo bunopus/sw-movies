@@ -1,14 +1,14 @@
-<template [ngIf]="items == null">
+<template [ngIf]="movies == null">
 	<div class="notice">Loading...</div>
 </template>
 
-<template [ngIf]="items != null && items.isNotEmpty">
+<template [ngIf]="movies != null">
 	<div id="posters-wrapper" class="content-padding clearfix">
-			<div class="poster" *ngFor="let item of items; let i = index">
+			<div class="poster" *ngFor="let item of movies.movies; let i = index">
 				<a [routerLink]="getMovieLink(item)" routerLinkActive="active">
-					<img src="{{item['poster']}}" alt="{{item['title']}}" class="img-responsive"/>
+					<img src="{{item.poster}}" alt="{{item.title}}" class="img-responsive"/>
 					<div class="poster-info-overlay">
-						<h3>{{item['title']}}</h3>
+						<h3>{{item.title}}</h3>
 						<h4>View more</h4>
 					</div>
 				</a>

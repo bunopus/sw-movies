@@ -8,10 +8,8 @@ part of 'movie.dart';
 
 Movie _$MovieFromJson(Map<String, dynamic> json) => new Movie(
     json['title'] as String,
-    json['episode_number'] == null
-        ? null
-        : intFromString(json['episode_number'] as String),
-    (json['main_characters'] as List)?.map((dynamic e) => e as String)?.toList(),
+    json['episode_number'] == null ? null : intFromAny(json['episode_number']),
+    (json['main_characters'] as List)?.map((e) => e as String)?.toList(),
     json['description'] as String,
     json['poster'] as String,
     json['hero_image'] as String);
