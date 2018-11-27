@@ -9,3 +9,4 @@ Example repository for Dart language, which demonstrates server, client, mobile 
     pub get
     dart bin/server.dart
   ```
+2. Mock database, and define Movie model (thanks https://github.com/Package/Star-Wars-Express for json)  
