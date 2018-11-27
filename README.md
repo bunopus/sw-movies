@@ -10,3 +10,4 @@ Example repository for Dart language, which demonstrates server, client, mobile 
     dart bin/server.dart
   ```
 2. Mock database, and define Movie model (thanks https://github.com/Package/Star-Wars-Express for json)  
+3. Added `json_serializable` - package for data serialization/deserialization. To generate model, follow the [rules](https://github.com/dart-lang/json_serializable/tree/master/example).  

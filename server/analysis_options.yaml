@@ -13,7 +13,7 @@ analyzer:
   - bin/**
   - build/**
   - dist/**
-
+  - lib/**/*.g.dart
 
   errors:
     unused_local_variable: error
