@@ -1,0 +1,25 @@
+<template [ngIf]="movie == null">
+	<div class="notice">Loading...</div>
+</template>
+
+<template [ngIf]="movie != null">
+	<div class="content-padding clearfix">
+		<div class="poster-wrapper">
+			<img src="{{movie['poster']}}" alt="{{movie['title']}}" class="img-responsive"/>
+		</div>
+
+		<div class="description-wrapper">
+			<div class="description">
+				<h2 class="movie-header">Description</h2>
+				<p>{{movie['description']}}</p>
+			</div>
+
+			<div class="main-characters">
+				<h2 class="movie-header">Main Characters</h2>
+				<ul>
+					<li *ngFor="let character of characters">{{character}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>

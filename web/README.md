@@ -1,7 +1,29 @@
-# web
+## Running locally
 
-A web app that uses [AngularDart](https://webdev.dartlang.org/angular) and
-[AngularDart Components](https://webdev.dartlang.org/components).
+To debug locally with DDC:
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+```bash
+$ pub get
+$ pub run build_runner serve
+```
+
+To debug locally with Dart2JS, unminified:
+
+```bash
+$ pub get
+$ pub run build_runner serve --config=debug
+```
+
+To debug locally with Dart2JS, minified:
+
+```bash
+$ pub get
+$ pub run build_runner serve --config=release
+```
+
+## Building a binary
+
+```bash
+$ pub get
+$ pub run build_runner build --config=release -o build
+```

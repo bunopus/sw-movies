@@ -29,6 +29,8 @@ void onData(HttpRequest event) {
   final encoded = const JsonEncoder().convert(goodMovies.toList());
 
   event.response
+    // only for demo purpose, remove in production
+    ..headers.add('Access-Control-Allow-Origin', '*')
     ..statusCode = HttpStatus.ok
     ..write(encoded)
     ..close();
