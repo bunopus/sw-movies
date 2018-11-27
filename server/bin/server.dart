@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:server/src/database.dart';
+import 'package:server/src/movie.dart';
 import 'package:server/src/movies.dart';
 
 Future main() async {
@@ -23,7 +24,9 @@ Future main() async {
 void onData(HttpRequest event) {
   final movies = Movies.fromJson(Database.getMovies()).movies;
 
-  final encoded = const JsonEncoder().convert(movies);
+  final goodMovies = movies.where((Movie mov) => mov.episodeNumber != 7);
+
+  final encoded = const JsonEncoder().convert(goodMovies.toList());
 
   event.response
     ..statusCode = HttpStatus.ok
