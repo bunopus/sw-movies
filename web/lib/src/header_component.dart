@@ -17,7 +17,7 @@ class HeaderComponent {
       if(state.path.startsWith('/movie/')) {
         var id = state.parameters['id'];
         var item = await _service.getMovie(int.parse(id));
-        setBackground(item['hero_image']);
+        setBackground(item.heroImage);
       }
       else {
         setBackground();

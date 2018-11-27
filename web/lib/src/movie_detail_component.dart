@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:models/models.dart';
 
 import '../movies_service.dart';
 
@@ -14,7 +15,7 @@ import '../movies_service.dart';
 class MovieDetailComponent implements OnActivate {
   final MoviesService _moviesService;
 
-  Map movie;
+  Movie movie;
   List<String> characters;
 
   MovieDetailComponent(this._moviesService);
@@ -23,7 +24,7 @@ class MovieDetailComponent implements OnActivate {
   Future onActivate(_, RouterState current) async {
     final id = current.parameters['id'];
     movie = await _moviesService.getMovie(int.parse(id));
-    characters = getCharacters(movie['main_characters']);
+    characters = getCharacters(movie.mainCharacters);
   }
 
   List<String> getCharacters(List<dynamic> characters) => characters.cast<String>();

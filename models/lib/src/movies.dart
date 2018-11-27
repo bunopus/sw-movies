@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:server/src/movie.dart';
+import 'package:models/models.dart';
 part 'movies.g.dart';
 
 @JsonSerializable()

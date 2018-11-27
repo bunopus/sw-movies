@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
+import 'package:models/models.dart';
+
 
 import 'package:angular/angular.dart';
 
@@ -13,22 +15,22 @@ class MoviesService {
   final String _baseUrl;
 
   // Store movies in memory to instantly load when requested.
-  List<Map> _cacheMoviesResult;
+  Movies _cacheMoviesResult;
 
   MoviesService(@baseUrl this._baseUrl);
 
-  Future<List<Map>> getMovies() async {
+  Future<Movies> getMovies() async {
     final url = '$_baseUrl';
     if (_cacheMoviesResult != null) {
       return _cacheMoviesResult;
     }
     final response = await HttpRequest.getString(url);
-    final decoded = json.decode(response) as List<dynamic>;
-    return _cacheMoviesResult = decoded.cast<Map>();
+    final decoded = json.decode(response) as Map<String, dynamic>;
+    return _cacheMoviesResult = new Movies.fromJson(decoded);
   }
 
-  Future<Map> getMovie(int id) {
-    var item = _cacheMoviesResult.firstWhere((Map item) => item['episode_number'] == id);
+  Future<Movie> getMovie(int id) {
+    var item = _cacheMoviesResult.movies.firstWhere((Movie item) => item.episodeNumber == id);
     return new Future.value(item);
   }
 }

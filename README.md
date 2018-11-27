@@ -18,3 +18,10 @@ Example repository for Dart language, which demonstrates server, client, mobile 
 7. Add data, views and many more. NOTE: this is not production app, so expect many shitcoding ¯\_(ツ)_/¯.
 Notice `/web/lib/movies_service.dart`, main service for data serialization/deserialization  
 And again, thanks for css and html https://github.com/Package/Star-Wars-Express
+8. Move all models to separate package, and include it into server and web  
+Notice `/web/analysis_options.yaml`. There is one important line
+    ```yaml
+      plugins:
+        - angular
+    ```
+    it enables analyzer support for angular html files

@@ -5,7 +5,7 @@ part 'movie.g.dart';
 class Movie {
   String title;
 
-  @JsonKey(fromJson: intFromString, name: 'episode_number')
+  @JsonKey(name: 'episode_number')
   int episodeNumber;
 
   @JsonKey(name: 'main_characters')
@@ -21,8 +21,4 @@ class Movie {
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
   Map<String, dynamic> toJson() => _$MovieToJson(this);
-}
-
-int intFromString(String val) {
-  return int.parse(val, radix: 10);
 }

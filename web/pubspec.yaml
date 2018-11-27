@@ -11,6 +11,8 @@ dependencies:
   angular: ^5.1.0
   angular_components: ^0.10.1
   angular_router: ^2.0.0-alpha+20
+  models:
+    path: ../models
 
 
 dev_dependencies:
