@@ -4,7 +4,7 @@ description: A starting point for Dart libraries or applications.
 # author: eugene.kot <bunopus@gmail.com>
 
 environment:
-  sdk: '>=2.1.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
   json_annotation: ^2.0.0
