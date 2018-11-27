@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class Database {
-  static dynamic getMovies() {
+  static Map<String, dynamic> getMovies() {
     return json.decode('''
     {
       "movies": [{
@@ -67,6 +67,6 @@ class Database {
         "hero_image" : ""
       }]
     
-    }''');
+    }''') as Map<String, dynamic>;
   }
 }
